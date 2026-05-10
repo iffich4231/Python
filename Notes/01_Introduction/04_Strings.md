@@ -278,15 +278,15 @@ Strings are arrays of characters. Try extracting a few characters:
 
 ```python
 >>> symbols[0]
-?
+'A'
 >>> symbols[1]
-?
+'A'
 >>> symbols[2]
-?
+'P'
 >>> symbols[-1]        # Last character
-?
+'O'
 >>> symbols[-2]        # Negative indices are from end of string
-?
+'C'
 >>>
 ```
 
@@ -320,7 +320,7 @@ the end of `symbols`:
 Oops!  That's not what you wanted. Fix it so that the `symbols` variable holds the value `'AAPL,IBM,MSFT,YHOO,SCO,GOOG'`.
 
 ```python
->>> symbols = ?
+>>> symbols = symbols[:22] + "," + symbols[22:]
 >>> symbols
 'AAPL,IBM,MSFT,YHOO,SCO,GOOG'
 >>>
@@ -329,7 +329,7 @@ Oops!  That's not what you wanted. Fix it so that the `symbols` variable holds t
 Add `'HPQ'` to the front the string:
 
 ```python
->>> symbols = ?
+>>> symbols = "HPQ," + symbols
 >>> symbols
 'HPQ,AAPL,IBM,MSFT,YHOO,SCO,GOOG'
 >>>
@@ -349,15 +349,16 @@ interactive prompt, try these operations:
 
 ```python
 >>> 'IBM' in symbols
-?
+True
 >>> 'AA' in symbols
 True
 >>> 'CAT' in symbols
-?
+False
 >>>
 ```
 
-*Why did the check for `'AA'` return `True`?*
+*Why did the check for `'AA'` return `True`?* 
+  The in operator in Python performs a substring search. It checks if the sequence of characters on the left exists anywhere inside the string on the right.
 
 ### Exercise 1.16: String Methods
 
@@ -365,9 +366,9 @@ At the Python interactive prompt, try experimenting with some of the string meth
 
 ```python
 >>> symbols.lower()
-?
+'hpq,aapl,ibm,msft,yhoo,sco,goog'
 >>> symbols
-?
+'HPQ,AAPL,IBM,MSFT,YHOO,SCO,GOOG'
 >>>
 ```
 
@@ -382,16 +383,16 @@ Try some more operations:
 
 ```python
 >>> symbols.find('MSFT')
-?
+13
 >>> symbols[13:17]
-?
+'MSFT'
 >>> symbols = symbols.replace('SCO','DOA')
 >>> symbols
-?
+'HPQ,AAPL,IBM,MSFT,YHOO,DOA,GOOG'
 >>> name = '   IBM   \n'
 >>> name = name.strip()    # Remove surrounding whitespace
 >>> name
-?
+'IBM'
 >>>
 ```
 
