@@ -64,26 +64,31 @@ def read_prices(filename):
 # print(read_prices('Data/prices.csv'))
 
 # Exercise 2.7 Finding out if you can retire
-def retirement(portfolio_file, prices_file):
-    portfolio = read_portfolio(portfolio_file)
-    prices = read_prices(prices_file)
-    total_cost = 0.0
-    total_value = 0.0
-    for stock in portfolio:
-        name = stock['name']
-        shares = stock['shares']
-        purchase_price = stock['price']
+# def retirement(portfolio_file, prices_file):
+#     portfolio = read_portfolio(portfolio_file)
+#     prices = read_prices(prices_file)
+#     total_cost = 0.0
+#     total_value = 0.0
+#     for stock in portfolio:
+#         name = stock['name']
+#         shares = stock['shares']
+#         purchase_price = stock['price']
 
-        current_price = prices[name]
+#         current_price = prices[name]
 
-        total_cost += shares * purchase_price
-        total_value += shares * current_price
-    print(f'Total cost: {total_cost:0.2f}')
-    print(f'Current value: {total_value:0.2f}')
-    print(f'Profit/Loss: {total_value - total_cost}')
+#         total_cost += shares * purchase_price
+#         total_value += shares * current_price
+#     print(f'Total cost: {total_cost:0.2f}')
+#     print(f'Current value: {total_value:0.2f}')
+#     print(f'Profit/Loss: {total_value - total_cost}')
 
-retired = retirement('Data/portfolio.csv', 'Data/prices.csv')
-if retired:
-    print('Yayy!! I can retire now')
-else:
-    print('Not yet, Stay focused')
+# retired = retirement('Data/portfolio.csv', 'Data/prices.csv')
+# if retired:
+#     print('Yayy!! I can retire now')
+# else:
+#     print('Not yet, Stay focused')
+
+# Exercise 2.9 Collecting Data
+def make_report(file1, file2):
+    report = []
+    
